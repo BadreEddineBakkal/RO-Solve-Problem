@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RO - Programmation Linéaire</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', q=123) }}">
+</head>
+<body class="page-body">
+    <header>
+        <h1>Programmation Linéaire</h1>
+        <p><a href="/" class="back-link"> Retour à l'accueil</a></p>
+    </header>
+
+    <div class="container">
+        <div class="form-section config-section">
+            <h3>  Configuration du Problème</h3>
+            <div class="config-grid">
+                <div>
+                    <label>Type d'Optimisation :</label>
+                    <select id="type_optimisation">
+                        <option value="max">Maximisation (Max Z)</option>
+                        <option value="min">Minimisation (Min Z)</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Nombre de variables :</label>
+                    <input type="number" id="num_vars" value="2" min="2" max="10">
+                </div>
+                <div>
+                    <label>Nombre de contraintes :</label>
+                    <input type="number" id="num_cons" value="2" min="1" max="10">
+                </div>
+                <div>
+                    <button onclick="genererFormulaire()" class="btn-generate">Générer le Formulaire</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="dynamic_form_section" class="form-section" style="display: none;">
+            <h3> Saisie des Données</h3>
+            
+            <h4>Fonction Objectif (Z) :</h4>
+            <div id="objectif_inputs" class="equation-row"></div>
+            
+            <h4 style="margin-top: 20px;">Contraintes :</h4>
+            <div id="contraintes_inputs"></div>
+
+            <div class="action-buttons">
+                <button onclick="resoudre('algebrique')" class="btn-primary" id="btn_algebrique">
+                    Résoudre par Simplexe (Algébrique)
+                </button>
+                <button onclick="resoudre('graphique')" class="btn-secondary" id="btn_graphique">
+                    Résoudre (Graphique 2D)
+                </button>
+            </div>
+            <p id="graph_warning" style="color: red; font-size: 0.9em; display: none; text-align: center;">
+                * La méthode graphique n'est disponible que pour 2 variables.
+            </p>
+        </div>
+
+        <div id="boite_resultat" class="result-section" style="display: none;">
+            <h3>Rapport de Solution</h3>
+            <div id="texte_resultat" class="result-text"></div>
+            
+            <div id="image_graphe_container" style="display: none; text-align: center; margin-top: 20px;">
+                <img id="image_resultat" src="" alt="Graphe de Solution" style="max-width: 100%; border: 1px solid #ccc; border-radius: 8px;">
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

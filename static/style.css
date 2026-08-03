@@ -1,0 +1,292 @@
+/* =========================================
+   STYLE DE LA PAGE D'ACCUEIL (home.html)
+   ========================================= */
+
+.home-body {
+    /* Hna kan-jibou l'image. '../img/' hit CSS kayn f 'css/' */
+    background-image: url('/static/img/backgroundRO_solveProblem.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Kat-ched l'écran kamel */
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Khelina l'image t-ban w drna loun zreq mdlam m-transpari foqha */
+.overlay {
+    background-color: rgba(0, 15, 30, 0.6); 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* L'boite dyal zaj lli wstha l'ktaba (Glassmorphism) */
+.home-container {
+    text-align: center;
+    color: white;
+    background: rgba(255, 255, 255, 0.05); /* Byed m-transpari */
+    padding: 60px 80px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px); /* Hadik li kat-debbeb l'background */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-title {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color: #00e5ff; /* Zreq cyan kiy-mchi m'a l'image */
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #b3cde0;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+/* Design dyal les boutons */
+.btn-custom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 160px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.4em;
+    font-weight: bold;
+    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(0, 91, 150, 0.7), rgba(3, 57, 108, 0.7));
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+/* L'Animation melli kat-hutt l'souris foq l'bouton (Hover) */
+.btn-custom:hover {
+    transform: translateY(-8px) scale(1.05); /* Kiy-tle' l-fouq chwiya */
+    box-shadow: 0 15px 30px rgba(0, 229, 255, 0.4); /* Kay-tleg dou dyal cyan */
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.9), rgba(0, 91, 150, 0.9));
+    border: 1px solid rgba(0, 229, 255, 0.8);
+}
+
+/* =========================================
+   STYLE DE LA PAGE PL (pagePL.html) W L'BACKGROUND
+   ========================================= */
+
+/* 1. L'background l'jdid dyal l'page */
+.page-body {
+    background-image: url('/static/img/backgroundRO_solveProblem.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Muhim bzzaf: Bach l'background i-bqa waqef melli t-hbet l-teht */
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. L'Header (L'foq) bach i-ban byed foq l'background m-dlam */
+.page-body header {
+    background: rgba(0, 21, 41, 0.9); /* Zreq m-dlam chwiya transparent */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+}
+
+.page-body header h1 {
+    margin: 0;
+    margin-bottom: 5px;
+    color: #00e5ff; /* Cyan bhal l'page d'accueil */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.page-body header a.back-link {
+    color: #b3cde0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.page-body header a.back-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* 3. L'formulaire w l'Resultat (N-khlliwh byed b'wahed chwiya dyal zaj bach l'ktaba t-bqa bayna) */
+.form-section, .result-section {
+    background: rgba(255, 255, 255, 0.96); /* Byed m3a chwiya dyal transparence (96%) */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   STYLE DYAL L'FORMULAIRE (Dark Theme / Glassmorphism)
+   ========================================= */
+
+/* L'boitat dyal l'inputs w l'resultat */
+.form-section, .result-section {
+    background: rgba(0, 15, 30, 0.75); /* Zreq mdlam chfaff (75%) */
+    color: white; /* L'ktaba b'l-byed bach t-ban */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px); /* L'effet dyal zaj m-debbeb */
+    margin-top: 20px;
+    border: 1px solid rgba(0, 229, 255, 0.2); /* Cadre cyan sghir */
+}
+
+/* L'3anawin (Headers) wst l'formulaire */
+.form-section h3, .result-section h3 {
+    color: #00e5ff; /* Cyan kiy-bri */
+    border-bottom: 1px solid rgba(0, 229, 255, 0.3);
+    padding-bottom: 10px;
+}
+
+.form-section h4 {
+    color: #b3cde0; /* Zreq fatah l'les sous-titres */
+}
+
+/* L'boita dyal l'partie 1 (Configuration) */
+.config-grid {
+    background: rgba(255, 255, 255, 0.05); /* Byed chfaff bzzaf */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* =========================================
+   STYLE DYAL LES INPUTS (M-dlam m3a cadre cyan)
+   ========================================= */
+input[type="number"], select {
+    background: rgba(0, 21, 41, 0.8); /* Khalfiya m-dlma l'l-morb3at */
+    color: white;
+    border: 1px solid rgba(0, 229, 255, 0.5); /* Cadre cyan */
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 1rem;
+    width: 70px;
+    margin: 0 5px;
+    text-align: center;
+}
+
+select {
+    width: 250px; /* Select dyal l'Max/Min khassou i-koun twil */
+}
+
+/* Melli t-klicki 3la chi input (Focus) */
+input[type="number"]:focus, select:focus {
+    outline: none;
+    border-color: #00e5ff;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5); /* Kay-tle9 dou cyan */
+}
+
+/* N-bdlou loun dyal texte lli wrah les boutons */
+label {
+    color: #b3cde0;
+    font-weight: bold;
+}
+/* =========================================
+   STYLE DYAL LES BOUTONS (NEON / AI VIBE)
+   ========================================= */
+
+/* L'bouton li l-fouq (Générer le Formulaire) */
+.btn-generate {
+    background: transparent;
+    color: #00e5ff;
+    border: 2px solid #00e5ff;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-generate:hover {
+    background: rgba(0, 229, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* L'boita lli jam3a les boutons l-teht */
+.action-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* L'mikanik l'3ama dyal les 2 boutons l-teht */
+.btn-primary, .btn-secondary {
+    flex: 1;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Bouton 1: Simplexe (Loun 3amer w m-dlam) */
+.btn-primary {
+    background: linear-gradient(135deg, rgba(0, 91, 150, 0.8), rgba(3, 57, 108, 0.9));
+    color: white;
+    border: 1px solid #00e5ff;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.9), rgba(0, 91, 150, 0.9));
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Bouton 2: Graphique 2D (Loun khawi m3a cadre kiy-bri) */
+.btn-secondary {
+    background: transparent;
+    color: #00e5ff;
+    border: 2px solid #00e5ff;
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 229, 255, 0.15);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Melli kiy-koun l'bouton Graphique désactivé (aktar mn 2 variables) */
+.btn-secondary:disabled {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.3);
+    background: transparent;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+}

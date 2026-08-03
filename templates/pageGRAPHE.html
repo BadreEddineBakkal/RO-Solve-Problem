@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RO - Théorie des Graphes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="page-body">
+    <header>
+        <h1>Module : Théorie des Graphes</h1>
+        <p><a href="/" class="back-link">⬅ Retour à l'accueil</a></p>
+    </header>
+
+    <div class="container">
+        <div class="form-section config-section">
+            <h3>Configuration du Graphe</h3>
+            <div class="config-grid">
+                <div>
+                    <label>Algorithme :</label>
+                    <select id="algo_graphe">
+                        <option value="dijkstra">Dijkstra (Plus court chemin)</option>
+                        <option value="bellman">Bellman-Ford</option>
+                        <option value="kruskal">Kruskal (Arbre couvrant minimum)</option>
+                        <option value="ford">Ford-Fulkerson (Flot maximum)</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Type de graphe :</label>
+                    <select id="type_graphe">
+                        <option value="oriente">Orienté (Flèches)</option>
+                        <option value="non_oriente">Non Orienté (Lignes)</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Nombre d'arcs (liens) :</label>
+                    <input type="number" id="num_arcs" value="4" min="1" max="30">
+                </div>
+                <div>
+                    <button onclick="genererFormulaireGraphe()" class="btn-generate">Générer les Arcs</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="dynamic_form_graphe" class="form-section" style="display: none;">
+            <h3>Saisie des Liaisons</h3>
+            <p style="color: #b3cde0; font-size: 0.9em; margin-bottom: 15px;">
+                Indiquez les connexions. Exemple : Source (A), Destination (B), Poids/Capacité (10).
+            </p>
+            
+            <div id="arcs_inputs"></div>
+
+            <div id="extra_inputs" style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(0, 229, 255, 0.3); display: none;">
+                <label>Noeud de Départ (Source) : </label>
+                <input type="text" id="noeud_depart" value="A" style="width: 80px; margin-right: 20px;">
+                
+                <label id="label_arrivee" style="display: none;">Noeud d'Arrivée (Puits) : </label>
+                <input type="text" id="noeud_arrivee" value="F" style="width: 80px; display: none;">
+            </div>
+
+            <div class="action-buttons">
+                <button onclick="resoudreGraphe()" class="btn-primary" style="width: 100%;">
+                    Calculer & Tracer le Graphe
+                </button>
+            </div>
+        </div>
+
+        <div id="boite_resultat_graphe" class="result-section" style="display: none;">
+            <h3>Rapport du Graphe</h3>
+            <div id="texte_resultat_graphe" class="result-text"></div>
+            
+            <div id="image_graphe_container" style="text-align: center; margin-top: 20px; display: none;">
+                <img id="image_resultat_graphe" src="" alt="Tracé du Graphe" style="max-width: 100%; border: 1px solid rgba(0, 229, 255, 0.5); border-radius: 8px; box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);">
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
