@@ -54,7 +54,7 @@ RO_SloverProblem/
 
 1. Cloner le dépôt :
 ```bash
-git clone https://github.com/<votre-nom-utilisateur>/RO_SloverProblem.git
+git clone https://github.com/BadreEddineBakkal/RO-Solve-Problem.git
 cd RO_SloverProblem
 ```
 
